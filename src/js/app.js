@@ -9,7 +9,7 @@ barba.init({
         gsap.to('.header .intro', {
           autoAlpha: 0,
           duration: 0.6,
-          delay: 0.5,
+          delay: 0.8,
           onComplete: () => animationEnter(next.container),
         });
       },

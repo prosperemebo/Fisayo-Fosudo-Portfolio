@@ -10,7 +10,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    animation: flash 0.3s 3 forwards;
+    animation: flash 0.3s infinite forwards;
     animation-timing-function: step-start;
 
     h1 {
@@ -49,6 +49,7 @@
     transform: translateY(-50%);
     padding-left: 9rem;
     opacity: 0;
+    z-index: 1;
 
     h2 {
       font-size: 6rem;
@@ -93,6 +94,10 @@
       top: 80%;
       padding-left: 3rem;
     }
+
+    @media only screen and (max-height: 600px) {
+      top: 60%;
+    }
   }
 
   .hero-contain {
@@ -105,13 +110,14 @@
     top: 0;
     height: 100vh;
     z-index: -1;
-    transform: translateY(-11%);
+    transform: translateY(-22%);
 
     @include respond(tab-land) {
       right: -15%;
     }
 
     @include respond(tab-port) {
+      transform: translateY(-15%);
       right: -30%;
     }
 

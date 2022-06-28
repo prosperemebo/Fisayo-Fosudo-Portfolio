@@ -20,10 +20,14 @@ const animationEnter = (container) => {
       x: 100,
     })
     .set(cta, { autoAlpha: 0 })
-    .from(greetings, {
-      y: 120,
-      stagger: 0.2,
-    })
+    .from(
+      greetings,
+      {
+        y: 120,
+        stagger: 0.2,
+      },
+      '-=.2'
+    )
 
     .from(
       textbox,
