@@ -6,8 +6,14 @@ const animationEnter = (container) => {
   const greetings = container.querySelectorAll('.greetings .text span');
   const hero = container.querySelector('.header .hero-contain');
   const logo = container.querySelector('.logo');
+  const body = document.querySelector('body');
 
-  const tl = gsap.timeline({ defaults: { duration: 1.2, ease: 'power4.out' } });
+  const tl = gsap.timeline({
+    defaults: {
+      duration: 1.2,
+      ease: 'power4.out',
+    },
+  });
 
   tl.set(textbox, {
     autoAlpha: 1,
@@ -53,7 +59,10 @@ const animationEnter = (container) => {
       },
       '-=1.3'
     )
-    .to(cta, { autoAlpha: 1 });
+    .to(cta, {
+      autoAlpha: 1,
+      onComplete: () => body.classList.remove('lock-scroll'),
+    });
 
   return tl;
 };

@@ -1,0 +1,76 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  position: relative;
+
+  .composition-1 {
+    display: flex;
+    transform: translateX(-27rem);
+  }
+
+  .composition-2 {
+    display: flex;
+  }
+
+  .composition-1-contain {
+    img {
+      height: 130vh;
+    }
+  }
+
+  .composition-2-contain {
+    img {
+      padding-top: 5rem;
+      height: 100vh;
+    }
+  }
+
+  .composition-text-1 {
+    width: 70rem;
+    margin: 0rem 10rem 0;
+    align-self: center;
+
+    h1 {
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .composition-text-2 {
+    width: 70rem;
+    margin: 0rem 30rem 0;
+    position: relative;
+    align-self: center;
+
+    .backdrop-dots {
+      position: absolute;
+      top: 5%;
+      left: -2%;
+      transform: translate(-50%, -50%);
+    }
+
+    .down-arrow {
+      position: absolute;
+      bottom: -38%;
+      right: -20%;
+      transform: translate(-50%, -50%);
+      width: 15rem;
+    }
+
+    h1 {
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .backdrop-lines {
+    position: absolute;
+    left: 150rem;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    z-index: -1;
+  }
+}

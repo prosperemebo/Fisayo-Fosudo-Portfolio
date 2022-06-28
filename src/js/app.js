@@ -2,6 +2,17 @@ import barba from '@barba/core';
 import gsap from 'gsap/gsap-core';
 import { animationEnter, animationLeave } from './animations';
 
+const resetScroll = () => {
+  // TODO: PUT THIS BACK
+  // window.scrollTo(0, 0);
+
+  // TODO: remove this
+  const body = document.querySelector('body');
+  body.classList.remove('lock-scroll');
+};
+
+resetScroll();
+
 barba.init({
   transitions: [
     {

@@ -31,6 +31,10 @@ body {
   box-sizing: border-box;
   background: $color-secondary;
   overflow-x: hidden;
+
+  &.lock-scroll {
+    overflow: hidden;
+  }
 }
 
 ::selection {
