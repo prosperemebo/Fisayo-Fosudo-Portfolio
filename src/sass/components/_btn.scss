@@ -1,0 +1,51 @@
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 6rem;
+  display: inline-block;
+  border: 1px solid $color-primary;
+  font-size: $default-font-size;
+  color: $color-secondary;
+  cursor: pointer;
+  background-color: $color-primary;
+  transition: transform 0.2s;
+
+  @include respond(phone) {
+    padding: 1rem 4rem;
+  }
+
+  span {
+    position: relative;
+  }
+
+  span::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 0;
+    display: block;
+    background-color: $color-secondary;
+    transition: left 0.3s ease, width 0.3s ease;
+    right: 0;
+    bottom: -3px;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+
+    span::after {
+      transform-origin: right;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-secondary, 0.2);
+  }
+}
