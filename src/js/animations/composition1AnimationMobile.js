@@ -25,8 +25,8 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({
   toggleActions: 'restart none none reverse',
   // markers: true,
-  start: 'top 70%',
-  end: 'bottom 70%',
+  start: 'top 50%',
+  end: 'bottom 50%',
   scrub: true,
 });
 
@@ -66,12 +66,12 @@ compositionTimeline
   )
   .fromTo(
     composition1Image,
-    { autoAlpha: 0, yPercent: 150 },
+    { autoAlpha: 0, yPercent: 50 },
     {
       autoAlpha: 1,
       yPercent: 0,
-      duration: 1.2,
-      delay: 0.7,
+      duration: 2,
+      // delay: 0.7,
     }
   )
   .to(
