@@ -135,9 +135,11 @@
 
     .down-arrow {
       position: absolute;
-      bottom: -20%;
-      right: -7%;
-      transform: translate(-50%, -50%);
+      top: 40%;
+      right: -2%;
+      // bottom: -20%;
+      // right: -7%;
+      // transform: translate(-50%, -50%);
       width: 10rem;
     }
   }

@@ -24,9 +24,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.defaults({
   toggleActions: 'restart none none reverse',
-  markers: true,
-  start: 'top 90%',
-  end: 'bottom 90%',
+  // markers: true,
+  start: 'top 70%',
+  end: 'bottom 70%',
   scrub: true,
 });
 
@@ -35,19 +35,51 @@ const compositionTimeline = gsap.timeline({
     ease: 'power4.out',
   },
   scrollTrigger: {
-    trigger: '.composition-text-1',
+    trigger: '.main-mobile .composition-1',
   },
 });
 
-compositionTimeline.fromTo(
-  composition1Headline,
-  {
-    y: 120,
-  },
-  {
-    y: 0,
-    stagger: 0.3,
-    duration: 0.7,
-  },
-  '-=0.5'
-);
+compositionTimeline
+  .fromTo(
+    composition1Headline,
+    {
+      y: 120,
+    },
+    {
+      y: 0,
+      stagger: 0.3,
+      duration: 1.2,
+    }
+  )
+  .fromTo(
+    composition1Content,
+    {
+      y: 120,
+      autoAlpha: 0,
+    },
+    {
+      y: 0,
+      autoAlpha: 1,
+      duration: 0.7,
+    },
+    '-=0.7'
+  )
+  .fromTo(
+    composition1Image,
+    { autoAlpha: 0, yPercent: 150 },
+    {
+      autoAlpha: 1,
+      yPercent: 0,
+      duration: 1.2,
+      delay: 0.7,
+    }
+  )
+  .to(
+    composition1ContentArrow,
+    {
+      yPercent: 150,
+      autoAlpha: 0,
+      duration: 2.7,
+    },
+    '-=0.7'
+  );

@@ -2,7 +2,8 @@ import barba from '@barba/core';
 import gsap from 'gsap/gsap-core';
 import { animationEnter, animationLeave } from './animations';
 import './animations/compositionAnimationDesktop';
-import './animations/compositionAnimationMobile';
+import './animations/composition1AnimationMobile';
+import './animations/composition2AnimationMobile';
 
 const resetScroll = () => {
   // TODO: PUT THIS BACK
