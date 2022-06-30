@@ -60,7 +60,6 @@
 
       span {
         display: inline-block;
-        overflow: hidden;
       }
 
       @include respond(phone) {
@@ -95,7 +94,7 @@
       padding-left: 3rem;
     }
 
-    @media only screen and (max-height: 600px) {
+    @media only screen and (max-height: 750px) and (min-width: 700px) {
       top: 60%;
     }
   }

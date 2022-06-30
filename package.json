@@ -20,6 +20,7 @@
     "copy-webpack-plugin": "^6.1.0",
     "css-loader": "^4.3.0",
     "eslint": "^7.9.0",
+    "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.11.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^7.0.32",
@@ -28,7 +29,6 @@
     "sass-loader": "^10.0.2",
     "stylelint": "^13.7.1",
     "stylelint-config-standard": "^20.0.0",
-    "html-webpack-plugin": "^4.3.0",
     "terser-webpack-plugin": "^4.2.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.41.2",
@@ -39,6 +39,7 @@
     "@barba/core": "^2.8.0",
     "@barba/prefetch": "^2.1.10",
     "@barba/router": "^2.1.10",
+    "animejs": "^3.2.1",
     "gsap": "^3.5.1"
   }
 }

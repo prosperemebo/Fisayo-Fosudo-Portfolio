@@ -59,10 +59,14 @@ const animationEnter = (container) => {
       },
       '-=1.3'
     )
-    .to(cta, {
-      autoAlpha: 1,
-      onComplete: () => body.classList.remove('lock-scroll'),
-    });
+    .to(
+      cta,
+      {
+        autoAlpha: 1,
+        onComplete: () => body.classList.remove('lock-scroll'),
+      },
+      '-=0.5'
+    );
 
   return tl;
 };

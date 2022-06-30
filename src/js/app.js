@@ -1,14 +1,16 @@
 import barba from '@barba/core';
 import gsap from 'gsap/gsap-core';
 import { animationEnter, animationLeave } from './animations';
+import './animations/compositionAnimationDesktop';
+import './animations/compositionAnimationMobile';
 
 const resetScroll = () => {
   // TODO: PUT THIS BACK
-  // window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
 
   // TODO: remove this
-  const body = document.querySelector('body');
-  body.classList.remove('lock-scroll');
+  // const body = document.querySelector('body');
+  // body.classList.remove('lock-scroll');
 };
 
 resetScroll();

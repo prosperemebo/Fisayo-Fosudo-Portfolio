@@ -33,7 +33,7 @@ body {
   overflow-x: hidden;
 
   &.lock-scroll {
-    overflow: hidden;
+    overflow: hidden !important;
   }
 }
 

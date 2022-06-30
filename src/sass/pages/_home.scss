@@ -1,24 +1,61 @@
-.main {
+.main-desktop {
   height: 100vh;
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  display: flex;
   position: relative;
+  display: flex;
+  overflow-y: hidden;
+  width: auto !important;
+  max-width: none !important;
+  left: 0;
+  top: 0;
 
-  .composition-1 {
-    display: flex;
-    transform: translateX(-27rem);
+  @media only screen and (max-height: 700px) {
+    display: none;
   }
 
+  @include respond(phone) {
+    display: none;
+  }
+
+  .composition-1,
   .composition-2 {
     display: flex;
+  }
+
+  .composition-text-1,
+  .composition-text-2 {
+    width: 70rem;
+    align-self: center;
+
+    h1 {
+      line-height: 1.1;
+      overflow: hidden;
+
+      &:not(:first-child) {
+        margin-bottom: 2rem;
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  .composition-1 {
+    transform: translateX(-27rem);
+
+    @include respond(tab-port) {
+      transform: translateX(-42rem);
+    }
   }
 
   .composition-1-contain {
     img {
       height: 130vh;
     }
+  }
+
+  .composition-text-1 {
+    margin: 0rem 10rem 0;
   }
 
   .composition-2-contain {
@@ -28,22 +65,9 @@
     }
   }
 
-  .composition-text-1 {
-    width: 70rem;
-    margin: 0rem 10rem 0;
-    align-self: center;
-
-    h1 {
-      line-height: 1.1;
-      margin-bottom: 2rem;
-    }
-  }
-
   .composition-text-2 {
-    width: 70rem;
     margin: 0rem 30rem 0;
     position: relative;
-    align-self: center;
 
     .backdrop-dots {
       position: absolute;
@@ -54,23 +78,67 @@
 
     .down-arrow {
       position: absolute;
-      bottom: -38%;
+      bottom: -20%;
       right: -20%;
       transform: translate(-50%, -50%);
-      width: 15rem;
+      width: 12rem;
     }
+  }
+}
 
-    h1 {
-      line-height: 1.1;
-      margin-bottom: 2rem;
+.main-mobile {
+  display: none;
+
+  @media only screen and (max-height: 700px) {
+    display: block;
+  }
+
+  @include respond(phone) {
+    display: block;
+  }
+
+  .composition-1-contain,
+  .composition-2-contain {
+    margin-bottom: 2rem;
+
+    img {
+      padding: 0rem 3rem;
+      width: 100vw;
     }
   }
 
-  .backdrop-lines {
-    position: absolute;
-    left: 150rem;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-25deg);
-    z-index: -1;
+  .composition-text-1,
+  .composition-text-2 {
+    margin: 15rem 3rem 6rem;
+    position: relative;
+
+    h1 {
+      line-height: 1.1;
+      overflow: hidden;
+
+      &:not(:first-child) {
+        margin-bottom: 2rem;
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    .backdrop-dots {
+      position: absolute;
+      top: 25%;
+      left: 7%;
+      transform: translate(-50%, -50%);
+      width: 12rem;
+    }
+
+    .down-arrow {
+      position: absolute;
+      bottom: -20%;
+      right: -7%;
+      transform: translate(-50%, -50%);
+      width: 10rem;
+    }
   }
 }
