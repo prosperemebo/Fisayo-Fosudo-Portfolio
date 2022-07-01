@@ -4,10 +4,12 @@ import { animationEnter, animationLeave } from './animations';
 import './animations/compositionAnimationDesktop';
 import './animations/composition1AnimationMobile';
 import './animations/composition2AnimationMobile';
+import './animations/footerAnimation';
 
 const resetScroll = () => {
   // TODO: PUT THIS BACK
-  // window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
+
   // TODO: remove this
   // const body = document.querySelector('body');
   // body.classList.remove('lock-scroll');

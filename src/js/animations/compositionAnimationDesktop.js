@@ -19,6 +19,7 @@ const composition2Headline = mainDesktop.querySelectorAll(
 const composition2Content = mainDesktop.querySelectorAll(
   '.composition-text-2 .content'
 );
+
 gsap.registerPlugin(ScrollTrigger);
 
 const compositionTimeline = gsap.timeline({
@@ -28,6 +29,36 @@ const compositionTimeline = gsap.timeline({
     ease: 'linear',
   },
 });
+
+const moveArrowDown = () => {
+  const arrow = document.querySelectorAll(
+    '.main-desktop .composition-text-2 .down-arrow'
+  );
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.defaults({
+    toggleActions: 'restart none none reverse',
+    start: 'top bottom',
+    end: 'bottom bottom',
+    scrub: true,
+  });
+
+  const timeline = gsap.timeline({
+    defaults: {
+      ease: 'power4.out',
+    },
+    scrollTrigger: {
+      trigger: '.footer',
+    },
+  });
+
+  timeline.to(arrow, {
+    yPercent: 150,
+    autoAlpha: 0,
+    duration: 2.7,
+  });
+};
 
 compositionTimeline
   .set(composition1Image, { autoAlpha: 0, yPercent: 50 })
@@ -119,14 +150,13 @@ ScrollTrigger.create({
   end: () => '+=' + mainDesktop.scrollWidth,
   onUpdate: (self) => {
     if (self.progress === 1) {
-      console.log('completed');
       mainDesktop.classList.add('scroll');
+      moveArrowDown();
       return;
     }
 
     mainDesktop.classList.remove('scroll');
   },
   scrub: true,
-
   pin: true,
 });
