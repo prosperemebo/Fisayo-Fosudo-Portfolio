@@ -1,5 +1,5 @@
 .main-desktop {
-  height: 100vh;
+  height: 100%;
   position: relative;
   display: flex;
   overflow-y: hidden;
@@ -7,6 +7,11 @@
   max-width: none !important;
   left: 0;
   top: 0;
+  // display: none;
+
+  &.scroll {
+    overflow-y: visible;
+  }
 
   @media only screen and (max-height: 700px) {
     display: none;
@@ -101,9 +106,19 @@
   .composition-2-contain {
     margin-bottom: 2rem;
 
+    &:last-child {
+      margin-bottom: 8rem;
+    }
+
     img {
       padding: 0rem 3rem;
-      width: 100vw;
+      width: 50rem;
+      margin: 0 auto;
+      display: block;
+
+      @include respond(phone) {
+        width: 100vw;
+      }
     }
   }
 
@@ -125,13 +140,13 @@
       }
     }
 
-    .backdrop-dots {
-      position: absolute;
-      top: 25%;
-      left: 7%;
-      transform: translate(-50%, -50%);
-      width: 12rem;
-    }
+    // .backdrop-dots {
+    //   position: absolute;
+    //   top: 25%;
+    //   left: 7%;
+    //   transform: translate(-50%, -50%);
+    //   width: 12rem;
+    // }
 
     .down-arrow {
       position: absolute;

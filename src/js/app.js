@@ -8,10 +8,9 @@ import './animations/composition2AnimationMobile';
 const resetScroll = () => {
   // TODO: PUT THIS BACK
   // window.scrollTo(0, 0);
-
   // TODO: remove this
-  const body = document.querySelector('body');
-  body.classList.remove('lock-scroll');
+  // const body = document.querySelector('body');
+  // body.classList.remove('lock-scroll');
 };
 
 resetScroll();

@@ -24,6 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 const compositionTimeline = gsap.timeline({
   defaults: {
     duration: 4,
+
     ease: 'linear',
   },
 });
@@ -116,6 +117,16 @@ ScrollTrigger.create({
   start: 'top top',
   invalidateOnRefresh: true,
   end: () => '+=' + mainDesktop.scrollWidth,
+  onUpdate: (self) => {
+    if (self.progress === 1) {
+      console.log('completed');
+      mainDesktop.classList.add('scroll');
+      return;
+    }
+
+    mainDesktop.classList.remove('scroll');
+  },
   scrub: true,
+
   pin: true,
 });

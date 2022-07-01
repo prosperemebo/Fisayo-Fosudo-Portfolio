@@ -1,0 +1,97 @@
+.footer {
+  height: 120vh;
+
+  position: relative;
+  overflow: hidden;
+
+  @include respond(phone) {
+  }
+
+  .textbox {
+    position: absolute;
+    left: 65%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    @include respond(phone) {
+      text-align: center;
+      left: 50%;
+      top: 20%;
+    }
+
+    h1 {
+      line-height: 1.1;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:not(:first-child) {
+        margin-bottom: 2rem;
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  .composition-contain {
+    img {
+      position: absolute;
+      bottom: 0;
+      height: 100vh;
+      z-index: -1;
+
+      @include respond(tab-port) {
+        transform: translateX(-20rem);
+      }
+
+      @media only screen and (max-width: 43.75em) {
+        // 700px
+
+        transform: translateX(-32rem);
+      }
+
+      @include respond(phone) {
+        transform: translate(0, 0);
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  .foot {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+
+    .credit {
+      color: #b4b4b4;
+      font-size: 1.4rem;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 1rem;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+
+        @include respond(phone) {
+          margin-right: 0.5rem;
+        }
+      }
+
+      img {
+        width: 2rem;
+      }
+    }
+  }
+}
