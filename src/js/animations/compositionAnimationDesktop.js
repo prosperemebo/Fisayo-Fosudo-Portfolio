@@ -142,7 +142,7 @@ compositionTimeline
     '-=4'
   );
 
-ScrollTrigger.create({
+const trigger = ScrollTrigger.create({
   animation: compositionTimeline,
   trigger: '.main-desktop',
   start: 'top top',
@@ -160,3 +160,9 @@ ScrollTrigger.create({
   scrub: true,
   pin: true,
 });
+
+const mainDesktopStyle = getComputedStyle(mainDesktop);
+
+if (mainDesktopStyle.display === 'none') {
+  trigger.kill();
+}
